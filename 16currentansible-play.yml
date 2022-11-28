@@ -1,0 +1,11 @@
+# some ansible provide the variables out of the box this is executing on the host machine 
+
+
+---
+- name : playbook directory demo 
+  hosts: all
+  gather_facts: false
+  tasks:
+   - name: print current playbooks directoury 
+     ansible.builtin.debug:
+      var : playbook_dir

@@ -1,0 +1,12 @@
+---
+- name: magic vars demo
+  hosts: all
+  gather_facts: false
+  tasks:
+   - name: magic variable
+     ansible.builtin.debug:
+      var: "{{item}}"
+     loop:
+      - ansible_version
+      - ansible_forks
+      

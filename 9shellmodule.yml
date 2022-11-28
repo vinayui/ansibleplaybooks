@@ -1,0 +1,12 @@
+---
+- name: shell module
+  hosts: all
+  tasks:
+   - name: shell module execution list file and folder * in current directory
+    # ansible.builtin.command: 'ls -l *'
+     ansible.builtin.shell: 'ls -l *'
+     register: command_output
+
+   - name: command_output to print on run time 
+     ansible.builtin.debug:
+      var: command_output.stdout_lines 

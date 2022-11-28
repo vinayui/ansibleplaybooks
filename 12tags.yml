@@ -1,0 +1,29 @@
+# --tags all
+# --tags tag1
+# --tags [tag1,tag2]
+# --skip-tags [tag3,tag4]
+# --tags tagged
+# --tags untagged
+
+
+---
+- name: tags demo
+  hosts: all
+  gather_facts: false
+  tasks:
+   - name: example1
+     ansible.builtin.debug:
+      msg: "example1"
+     tags: tag1
+
+   - name: example2
+     ansible.builtin.debug:
+      msg: "example12"
+     tags: tag2
+     
+
+  # ansible-playbook -i hosts  11templatemodule.yml 
+  #  ansible-playbook -i hosts --tags tag1 12tags.yml
+  #  ansible-playbook -i hosts --tags tag2 12tags.yml
+
+# ansible-playbook -i hosts --tags untagged 12tags.yml will skip the exescution if untagged is used 

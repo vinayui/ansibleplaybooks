@@ -1,0 +1,3 @@
+---
+# password will be encrypoted ansible-vault encrypt 19.0plaintoencrypt.yml
+password: Vinayui

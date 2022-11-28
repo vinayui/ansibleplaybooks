@@ -1,0 +1,26 @@
+# --check its a just a simulation mode
+# --diff changes made 
+
+
+---
+- name: root login enabled
+  hosts: all
+  become: true
+  tasks:
+   - name: ssh permitRootLogin
+     ansible.builtin.lineinfile:
+      dest: /etc/ssh/sshd_config
+      regexp: "^PasswordAuthentication"
+      line: "PasswordAuthentication no"
+      state: present
+     notify: ssh restart
+
+  handlers:
+   - name: ssh restart
+     ansible.builtin.service:
+      name: sshd
+      state: restarted
+
+#ansible-playbook --check -i hosts 14dryrun.yml 
+#ansible-playbook --check --diff -i hosts 14dryrun.yml 
+

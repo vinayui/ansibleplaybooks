@@ -1,0 +1,15 @@
+---
+- name: remote environment
+  hosts: all
+  gather_facts : false
+  environment:
+   EXAMPLE: test1
+  tasks:
+   - name: disaply.example
+     ansible.builtin.command: "echo $EXAMPLE"
+
+   - name: displae ecample
+     ansible.builtin.command: "echo $EXAMPLE"
+     environment:
+      EXAMPLE: test2
+      

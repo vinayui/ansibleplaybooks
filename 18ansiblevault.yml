@@ -1,0 +1,8 @@
+---
+- name: ansiblevalut example to encrypoth the password
+#[cloud_user@d6b4338e9a1c ~]$ ansible-vault encrypt 19.0plaintoencrypt.yml 
+#[DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. Current version: 3.6.8 (default, Sep 10 2021, 09:13:53) [GCC 8.5.0 20210514 (Red Hat 8.5.0-3)]. This feature will 
+#be removed from ansible-core in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+#New Vault password: 
+#Confirm New Vault password: 
+#Encryption successful

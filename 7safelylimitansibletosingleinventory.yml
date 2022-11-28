@@ -1,0 +1,20 @@
+# use --limit ar runtime
+# hosts:HOSTNAME
+# HOSTS: "{{host}}"
+
+---
+- name: harmful playbooks
+  hosts: "{{HOSTS}}"
+  tasks:
+   - name: harmful tasks
+     ansible.builtin.debug:
+      msg: "harmful tasks"
+     
+#ansible-playbook -i hosts2 7safelylimitansibletosingleinventory.yml will execute on all hosts
+
+# to execute on only one host or limit  ansible-playbook -i hosts2 --limit=d6b4338e9a3c.mylabserver.com 7safelylimitansibletosingleinventory.yml
+
+# specifiy on Hosts instead of all give full hostname 
+
+# define a vriable and pas itt in run time ansible-playbook -i hosts2 -e "HOSTS=d6b4338e9a3c.mylabserver.com" 7safelylimitansibletosingleinventory.yml 
+

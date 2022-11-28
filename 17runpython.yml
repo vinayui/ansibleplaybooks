@@ -1,0 +1,21 @@
+# ansible.builtin.script
+
+
+---
+- name: run python scrpt 
+  hosts: all
+  tasks:
+   - name : pythonscript executing on the remote machine 
+     ansible.builtin.script:
+      executable: python3
+      cmd: cars.py
+     register: cars_raw_output
+   - name : print the output on the screen 
+     ansible.builtin.debug:
+      var: cars_raw_output
+
+   - name : print the output on the screen 
+     ansible.builtin.debug:
+      var: cars_raw_output
+
+

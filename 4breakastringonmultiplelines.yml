@@ -1,0 +1,44 @@
+# "|" - Literal block scalar
+
+# ">" - folded block scalar
+
+---
+- name: debug modle demo
+  hosts: all
+  vars:
+   variable1: |
+    exactly as you see 
+    will appear these three 
+    lines of poetry
+   variable2: >
+    this is really a 
+    single line of text 
+    despite appearances
+   variable3: |-
+    exactly as you see 
+    will appear these three 
+    lines of poetry
+   variable4: >-
+    this is really a 
+    single line of text 
+    despite appearances
+     
+  tasks:
+   - name : print vairbale1
+     ansible.builtin.debug:
+      var: variable1
+  
+   - name : print variable2
+     ansible.builtin.debug:
+      var: variable2
+   - name : print vairbale3
+     ansible.builtin.debug:
+      var: variable3
+  
+   - name : print variable4
+     ansible.builtin.debug:
+      var: variable4
+
+   - name : print variable4
+     ansible.builtin.debug:
+      msg: "{{variable4.split('\n')}}"

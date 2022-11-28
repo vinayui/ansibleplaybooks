@@ -1,0 +1,21 @@
+---
+- name: pass the vairbale in command line
+  hosts: all
+  vars:
+   fruit: "banana"
+  tasks: 
+   - name: print a message
+     ansible.builtin.debug:
+      msg: "fruit is {{fruit}}"
+     
+
+
+
+
+# -- extra-vars "fruit=apple"  
+# --extra-vars '{"fruit":"aaple"}' json format
+# --extra-vars "@file.json"
+# --extra-vars "@file.yaml"
+
+# ansible-playbook -i hosts 3passvariablesincommandline.yml --extra-vars="fruit=strawberry"
+#ansible-playbook -i hosts 3passvariablesincommandline.yml --extra-vars='{"fruit":"appleand banana"}'

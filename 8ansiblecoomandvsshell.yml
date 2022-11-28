@@ -1,0 +1,16 @@
+---
+- name: command vs shell
+  hosts: all
+  tasks: 
+   - name: command module to check uptime 
+     ansible.builtin.command: uptime
+     register: command_output
+
+   - name: command_output
+     ansible.builtin.debug:
+      var: command_output.stdout_lines
+
+
+
+     
+

@@ -1,0 +1,15 @@
+---
+- name: pause the execution for certain time
+  hosts: all
+  vars:
+   waitforseconds: 10
+  tasks:
+   - name : pause for {{waitforseconds }}
+     ansible.builtin.pause:
+      seconds: "{{waitforseconds |int}}"
+  
+   - name : message
+     ansible.builtin.debug:
+      msg: "the end"
+     
+   

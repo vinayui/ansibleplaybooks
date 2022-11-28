@@ -1,0 +1,17 @@
+# execute command on the ansible hosts to execute on the control local hosts 
+
+# 3 ways
+# coonection plugin 
+# delegate_to:localhosts
+#local_action
+
+---
+- name: execution the playbook on delegate_to:localhosts
+  hosts: localhost
+  vars:
+   ansible_connection: local
+   ansible_python_interpreter: "{{ansible_playbook_python}}"
+  tasks:
+   - name: print hostname
+     ansible.builtin.debug:
+      msg: "{{inventory_hostname}}"

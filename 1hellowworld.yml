@@ -1,0 +1,14 @@
+---
+- name: hello world sample
+  hosts: all
+  vars:
+   fruit: "apple"
+  tasks:
+   - name: heelo message
+     ansible.builtin.debug:
+      #msg: "heelo world"
+      #msg: "example text"
+      #var: fruit
+      #msg: "our fruit is {{fruit}}"
+      #verbosity: 2
+      #ansible-playbook -i hosts heeloworld.yml  -vv 
